@@ -1,4 +1,6 @@
-describe("landing", function() {
+describe("Feature test", function() {
+  var plane;
+  var airport;
 
   beforeEach(function() {
     airport = new Airport();
@@ -6,6 +8,7 @@ describe("landing", function() {
   });
 
   it("instructs a plane to land", function() {
-      expect(airport.land(plane)).toEqual(plane);
+      plane.land(airport);
+      expect(airport.planes()).toContain(plane);
     });
-  })
+});
